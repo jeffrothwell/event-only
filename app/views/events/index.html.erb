@@ -1,13 +1,12 @@
 <h1>Events</h1>
 
 <p>
+  <%= link_to 'New Event', new_event_path %>
+</p>
+
+<p>
   <% @events.each do |event| %>
-    <div class="event">
-      <h3><%= event.name %></h3>
-      <h4>Happening in: <%= event.city %></h4>
-      <h4>On:           <%= event.date %></h4>
-      <h4>Capacity      <%= event.capacity %></h4>
-    </div>
+    <%= render 'event', event: event %>
     <hr>
   <% end %>
 </p>
